@@ -1,0 +1,322 @@
+/* تخصيص الألوان والأنماط لموقع وكالة السفريات */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.55 0.18 130); /* لون أزرق مغربي */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.65 0.15 60); /* لون برتقالي/ذهبي */
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.75 0.12 200); /* لون أزرق فاتح */
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.6 0.2 130); /* لون أزرق مغربي داكن */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.7 0.18 60); /* لون برتقالي/ذهبي داكن */
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.8 0.15 200); /* لون أزرق فاتح داكن */
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Tajawal', sans-serif;
+  }
+}
+
+/* أنماط مخصصة للموقع */
+.hero-section {
+  @apply relative h-screen w-full overflow-hidden;
+}
+
+.hero-image {
+  @apply absolute inset-0 h-full w-full object-cover;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 bg-black/40;
+}
+
+.hero-content {
+  @apply absolute inset-0 flex flex-col items-center justify-center text-white;
+}
+
+.section-title {
+  @apply mb-6 text-center text-3xl font-bold md:text-4xl lg:text-5xl;
+}
+
+.section-subtitle {
+  @apply mb-4 text-center text-xl font-medium text-muted-foreground md:text-2xl;
+}
+
+.destination-card {
+  @apply overflow-hidden rounded-lg bg-card shadow-md transition-all duration-300 hover:shadow-xl;
+}
+
+.destination-image {
+  @apply aspect-[4/3] w-full object-cover;
+}
+
+.destination-content {
+  @apply p-4;
+}
+
+.service-card {
+  @apply flex flex-col items-center rounded-lg bg-card p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl;
+}
+
+.service-icon {
+  @apply mb-4 rounded-full bg-primary/10 p-3 text-primary;
+}
+
+.testimonial-card {
+  @apply rounded-lg bg-card p-6 shadow-md;
+}
+
+.cta-section {
+  @apply bg-primary/10 py-16;
+}
+
+.footer {
+  @apply bg-gray-900 py-12 text-white;
+}
+
+/* أنماط للقائمة الرئيسية */
+.navbar {
+  @apply fixed left-0 right-0 top-0 z-50 bg-white/80 py-4 shadow-sm backdrop-blur-md dark:bg-gray-900/80;
+}
+
+.nav-container {
+  @apply mx-auto flex max-w-7xl items-center justify-between px-4;
+}
+
+.nav-logo {
+  @apply text-2xl font-bold text-primary;
+}
+
+.nav-links {
+  @apply hidden space-x-8 md:flex;
+}
+
+.nav-link {
+  @apply font-medium text-gray-700 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-primary;
+}
+
+.nav-button {
+  @apply rounded-full bg-primary px-6 py-2 font-medium text-white transition-colors hover:bg-primary/90;
+}
+
+.mobile-menu-button {
+  @apply rounded-md p-2 text-gray-700 md:hidden;
+}
+
+/* أنماط للأزرار */
+.btn-primary {
+  @apply rounded-full bg-primary px-6 py-3 font-medium text-white transition-colors hover:bg-primary/90;
+}
+
+.btn-secondary {
+  @apply rounded-full bg-secondary px-6 py-3 font-medium text-white transition-colors hover:bg-secondary/90;
+}
+
+.btn-outline {
+  @apply rounded-full border border-primary bg-transparent px-6 py-3 font-medium text-primary transition-colors hover:bg-primary/10;
+}
+
+/* أنماط للنموذج */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply mb-2 block text-sm font-medium;
+}
+
+.form-input {
+  @apply w-full rounded-md border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+}
+
+.form-textarea {
+  @apply w-full rounded-md border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+}
+
+.form-select {
+  @apply w-full rounded-md border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+}
+
+/* أنماط للتحريك */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* أنماط للشاشات المختلفة */
+@media (max-width: 768px) {
+  .hero-content {
+    @apply px-4 text-center;
+  }
+  
+  .section-title {
+    @apply text-2xl;
+  }
+  
+  .section-subtitle {
+    @apply text-lg;
+  }
+}
+
+/* تحريك العناصر عند التمرير */
+.reveal {
+  @apply opacity-0 transition-all duration-700;
+}
+
+.reveal.active {
+  @apply translate-y-0 opacity-100;
+}
+
+.reveal-left {
+  @apply -translate-x-20 opacity-0 transition-all duration-700;
+}
+
+.reveal-left.active {
+  @apply translate-x-0 opacity-100;
+}
+
+.reveal-right {
+  @apply translate-x-20 opacity-0 transition-all duration-700;
+}
+
+.reveal-right.active {
+  @apply translate-x-0 opacity-100;
+}
+
+/* تأثيرات إضافية */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.hover-rotate {
+  @apply transition-transform duration-300 hover:rotate-3;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+}
+
